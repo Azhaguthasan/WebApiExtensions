@@ -10,29 +10,33 @@ In case of Api's that return IHttpActionResult, an additional attribute is requi
 
 
 ###Sample Apis:
-
-`[Route("api/Person/{id}")]
+<code>
+[Route("api/Person/{id}")]
 public IEnumerable<Person> GetPerson(int id)
 {
   .....
-}`
+}
+</code>
 
-`[Route("api/Login")]  
+<code>
+[Route("api/Login")]  
 [ReturnType(typeof(AuthenticationToken)]  
 public IHttpActionResult Login(string username, string password)  
 {  
      .... 
      return OK(token);  
-}`  
+}</code>
 
 ###Additional Api required:
 
-`[Route("api/WebApiMetadata")]  
+<code>
+[Route("api/WebApiMetadata")]  
 public IEnumerable<WebApiDescription> GetWebApi()  
 {  
      var apiDescriptions = Configuration.Services.GetApiExplorer().ApiDescriptions;  
      return apiDescriptions.ToExternalDescriptions();  
-}`     
+}
+</code>
 
 
 This library is used in conjunction with npm 'ts-webapi-ref' module that can be used in a gulp task to generate typescript code. 
