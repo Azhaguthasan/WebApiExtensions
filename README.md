@@ -1,8 +1,7 @@
 # WebApiExtensions
 ApiDescription Extensions to convert to a simplified structure that can be exposed for client consumption
 
-When target Web Api services from a typescript project, one often needs to create types/model object structure in the client. In order to automate the process, this extension helps in simplifying the ApiDescription object so that it can be exposed for any automation tool that can create types. 
-
+When targeting Web Api services from a typescript project, one often needs to create types/model object structure in the client. To automate the process of creating the types, this extension helps the Web Api Service to provide additional endpoint that can expose all the API descriptions. This extension applies over the existing .Net System.Web.Http.ApiDescription and simplifies it so that it can be exposed in a separate end point for any automation tool that can create types. 
 
 The library is available in Nuget: https://www.nuget.org/packages/WebApiExplorerExtensions/
 
@@ -38,4 +37,4 @@ public IEnumerable<WebApiDescription> GetWebApi()
 ```
 
 
-This library is used in conjunction with npm 'ts-webapi-ref' module that can be used in a gulp task to generate typescript code. 
+This library is used in conjunction with npm 'ts-webapi-ref' module that can be used in a gulp task to generate typescript code. See here for more details: https://www.npmjs.com/package/ts-webapi-ref 
