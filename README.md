@@ -9,30 +9,30 @@ The library is available in Nuget: https://www.nuget.org/packages/WebApiExplorer
 In case of Api's that return IHttpActionResult, an additional attribute is required.
 
 
-Sample Apis:
+###Sample Apis:
 
-[Route("api/Person/{id}")]
+`[Route("api/Person/{id}")]
 public IEnumerable<Person> GetPerson(int id)
 {
   .....
-}
+}`
 
-[Route("api/Login")]
-[ReturnType(typeof(AuthenticationToken)]
-public IHttpActionResult Login(string username, string password)
-{
-     ....
-     return OK(token);
-}
+`[Route("api/Login")]  
+[ReturnType(typeof(AuthenticationToken)]  
+public IHttpActionResult Login(string username, string password)  
+{  
+     .... 
+     return OK(token);  
+}`  
 
-Additional Api required:
+###Additional Api required:
 
-[Route("api/WebApiMetadata")]
-public IEnumerable<WebApiDescription> GetWebApi()
-{
-     var apiDescriptions = Configuration.Services.GetApiExplorer().ApiDescriptions;
-     return apiDescriptions.ToExternalDescriptions();
-}
+`[Route("api/WebApiMetadata")]  
+public IEnumerable<WebApiDescription> GetWebApi()  
+{  
+     var apiDescriptions = Configuration.Services.GetApiExplorer().ApiDescriptions;  
+     return apiDescriptions.ToExternalDescriptions();  
+}`     
 
 
 This library is used in conjunction with npm 'ts-webapi-ref' module that can be used in a gulp task to generate typescript code. 
