@@ -120,8 +120,10 @@ namespace WebApiDescriptionGenerator
             }
             
 
-            var genericArguments = type.GenericTypeArguments.Select(typeArg => typeArg.ToTypeInfo());            
+            var genericArguments = type.GenericTypeArguments.Select(typeArg => typeArg.ToTypeInfo());
 
+            var isArray = type.IsArray;
+            var arrayElementType = isArray ? type.GetElementType().ToTypeInfo() : null;
 
             return new TypeInfo()
             {
@@ -130,6 +132,8 @@ namespace WebApiDescriptionGenerator
                 BaseType = type.BaseType.ToTypeInfo(),
                 TypeArguments = genericArguments,
                 IsEnum = type.IsEnum,
+                IsArray = isArray,
+                ArrayElementType = arrayElementType,
                 Namespace = type.Namespace,
                 Properties = properties
             };

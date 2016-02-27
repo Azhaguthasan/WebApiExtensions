@@ -10,6 +10,8 @@ namespace WebApiDescriptionGenerator
         public string Namespace { get; set; }
         public TypeInfo BaseType { get; set; }
         public bool IsEnum { get; set; }
+        public bool IsArray { get; set; }
+        public TypeInfo ArrayElementType { get; set; }
         public IEnumerable<TypeInfo> TypeArguments { get; set; }
         public IEnumerable<TypePropertyInfo> Properties { get; set; }
     }
