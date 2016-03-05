@@ -160,7 +160,7 @@ namespace WebApiDescriptionGenerator
             int rawValue;
             try
             {
-                rawValue = (int)fieldInfo.GetRawConstantValue();
+                rawValue = Convert.ToInt32(fieldInfo.GetRawConstantValue());
             }
             catch
             {
